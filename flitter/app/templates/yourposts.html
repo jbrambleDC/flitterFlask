@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>@{{user.username}} <a href = "{{ url_for('newpost')}}" class="btn btn-primary btn-lg pull-right">Create New Post</a></h1>
+<hr>
+
+{% for post in posts.items %}
+<div class = "container-fluid">
+	<div class = "row-fluid">
+		<div class = "span-2">
+			<h5>{{post.author.username}}</h5>
+			<small>{{ post.timestamp.isoformat()[0:-10].split('T')[0]+ ' ' + post.timestamp.isoformat()[0:-10].split('T')[1] }}</small></div>
+			<div class = "span-10">
+				<div class = "well">
+					<p>{{post.posttext}}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr>
+	{% endfor %}
+	{% if posts.has_prev %}<a href="{{ url_for('index', page = posts.prev_num) }}" class = "btn btn-danger btn-sm"><< Newer posts</a>{% endif %}
+{% if posts.has_next %}<a href="{{ url_for('index', page = posts.next_num) }}" class = "btn btn-success btn-sm">Older posts >></a>{% endif %}
+	{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+{% from "_formhelpers.html" import render_field %}
+
+<div class="well" align="center">
+	<form action="{{url_for('createpost')}}" method=post>
+        {{ form.csrf_token }}
+        <!--client side length verification-->
+        {{ render_field(form.posttext, maxlength=200) }}
+        <br>
+     	{{ form.submit(class="btn btn-success")}}
+    </form>
+</div>
+
+{% endblock %}
