@@ -4,7 +4,7 @@ flitterFlask
 clone of twitter created using flask framework for python 
 http://flitterfavmed.herokuapp.com/
 
-###not on heroku deployment:
+###note on heroku deployment:
 the code used to deploy is slightly different than the code in this repo, one must change their config file so that SQLALCHEMY_DATABASE_URI points at a postgresql database that has been added to the heroku app. refer to the Flask Mega Tutorial, as well Source #4 for detailed walkthrough of Heroku Deployment for flask apps
 
 ##Project Requirements:
