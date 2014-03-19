@@ -5,7 +5,7 @@ clone of twitter created using flask framework for python:
 http://flitterfavmed.herokuapp.com/
 
 ###note on heroku deployment:
-the code used to deploy is slightly different than the code in this repo, one must change their config file so that SQLALCHEMY_DATABASE_URI points at a postgresql database that has been added to the heroku app. refer to the Flask Mega Tutorial, as well Source #4 for detailed walkthrough of Heroku Deployment for flask apps
+The code used to deploy on Heroku is slightly different than the code in this repo, one must change their config file so that SQLALCHEMY_DATABASE_URI points at a postgresql database that has been added to the heroku app. Refer to the Flask Mega Tutorial, as well Source #4 for detailed walkthrough of Heroku Deployment for flask apps. Doing this also requires the Heroku deployment to have a list of dependencies called requirements.txt(that also contains psycopg2, and a Procfile. These files tell Heroku which dependencies to get, and how to create the database and run the app.
 
 ##Project Requirements:
 
@@ -20,21 +20,24 @@ http://localhost:port/flitter/user/username
 ##Optional enhancements: 
 
 1. Implement pagination to limit posts to 10 per page
+2. Facebook Registration (not included on this iteration)
 
 ##Sources:
 
 1. Flask Mega tutorial: http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
-2. for password hashing: http://flask.pocoo.org/snippets/54/
-3. for login management: https://flask-login.readthedocs.org/en/latest/
-4. for configuring postgresql server on Heroku http://beatofthegeek.com/2013/04/how-to-setup-postgresql-python-flask.html
+2. For password hashing: http://flask.pocoo.org/snippets/54/
+3. For login management: https://flask-login.readthedocs.org/en/latest/
+4. For configuring postgresql server on Heroku http://beatofthegeek.com/2013/04/how-to-setup-postgresql-python-flask.html
 
 
-##Some Open Issues and possible Additions:
+##Some Open Issues and Possible Additions:
 
 1. Currently, no facebook login feature is included.
 2. Would like to limit posts to 200 characters by implementing a visual cue that shows how far beyond 200 chars user has gone(similar to twitter).
 3. Add feature for deleting and editing posts.
 4. add error handling, so that there is a custom page to represent 404,500 error etc.
+
+##Running Flitter Locally
 
 first things first, get pip if you dont already have it and install the dependencies from dependencies.txt:
 ```
