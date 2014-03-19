@@ -5,7 +5,7 @@ clone of twitter created using flask framework for python:
 http://flitterfavmed.herokuapp.com/
 
 ###note on heroku deployment:
-The code used to deploy on Heroku is slightly different than the code in this repo, one must change their config file so that SQLALCHEMY_DATABASE_URI points at a postgresql database that has been added to the heroku app. Refer to the Flask Mega Tutorial, as well Source #4 for detailed walkthrough of Heroku Deployment for flask apps. Doing this also requires the Heroku deployment to have a list of dependencies called requirements.txt(that also contains psycopg2, and a Procfile. These files tell Heroku which dependencies to get, and how to create the database and run the app.
+The code used to deploy on Heroku is slightly different than the code in this repo, one must change their config file so that SQLALCHEMY_DATABASE_URI points at a postgresql database that has been added to the heroku app. Refer to the Flask Mega Tutorial, as well Source #4 for detailed walkthrough of Heroku Deployment for flask apps. Doing this also requires the Heroku deployment to have a list of dependencies called requirements.txt(that also contains psycopg2, and a Procfile. These files tell Heroku which dependencies to get, and how to create the database and run the app. navigate to http://flitterfavmed.herokuapp.com/flitter/user/jordanbramble to see a sample user with some sample posts that demonstrate pagination
 
 ##Project Requirements:
 
