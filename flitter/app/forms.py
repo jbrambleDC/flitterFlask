@@ -6,13 +6,13 @@ from flask import g
 
 class LoginForm(Form):
     username = TextField('Username or Email:', validators =[Required()])
-    password = PasswordField('password:', validators =[Required()])
+    password = PasswordField('Password:', validators =[Required()])
     submit = SubmitField('Login')
     remember_me = BooleanField('remember_me', default = False)
 
 class RegisterForm(Form):
 	fullname = TextField('Full Name:', validators =[Required()])
-	username = TextField('Username or Email:', validators =[Required()])
+	newusername = TextField('Username or Email:', validators =[Required()])
 	password = PasswordField('Password:', validators=[Required()])
 	submit = SubmitField('Sign Up')
 
