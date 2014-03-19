@@ -2,8 +2,12 @@ flitterFlask
 ============
 
 clone of twitter created using flask framework for python 
+http://flitterfavmed.herokuapp.com/
 
-#Project Requirements:
+###not on heroku deployment:
+the code used to deploy is slightly different than the code in this repo, one must change their config file so that SQLALCHEMY_DATABASE_URI points at a postgresql database that has been added to the heroku app. refer to the Flask Mega Tutorial, as well Source #4 for detailed walkthrough of Heroku Deployment for flask apps
+
+##Project Requirements:
 
 1. Users need to be able to register with Flitter using standard username and password credentials. There is no need to address forgotten passwords.
 2. Passwords should be hashed in the database. Use a message digest and salt to obscure the passwords.
@@ -13,22 +17,24 @@ clone of twitter created using flask framework for python
 6. All posts are public and should be accessible by this URL convention:
 http://localhost:port/flitter/user/username
 
-#Optional enhancements: 
+##Optional enhancements: 
 
 1. Implement pagination to limit posts to 10 per page
 
-#Sources:
+##Sources:
 
 1. Flask Mega tutorial: http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
 2. for password hashing: http://flask.pocoo.org/snippets/54/
 3. for login management: https://flask-login.readthedocs.org/en/latest/
+4. for configuring postgresql server on Heroku http://beatofthegeek.com/2013/04/how-to-setup-postgresql-python-flask.html
 
 
-#Some Open Issues and possible Additions:
+##Some Open Issues and possible Additions:
 
 1. Currently, no facebook login feature is included.
 2. Would like to limit posts to 200 characters by implementing a visual cue that shows how far beyond 200 chars user has gone(similar to twitter).
 3. Add feature for deleting and editing posts.
+4. add error handling, so that there is a custom page to represent 404,500 error etc.
 
 first things first, get pip if you dont already have it and install the dependencies from dependencies.txt:
 ```
