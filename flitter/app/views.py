@@ -58,13 +58,14 @@ def login(page = 1):
 		#checks if passwords match
     	if check_password_hash(user.password,form.password.data):
     		login_user(user)
-    if user.is_authenticated():		
+    if form.password.data and form.username.data and check_password_hash(user.password,form.password.data):		
     	return render_template('yourposts.html', 
     		title = user.username,
     		user = user,
     		posts = user.posts.order_by("timestamp desc").paginate(page, POSTS_PER_PAGE, False),
 			)
     else:
+    	flash('Incorrect password')
     	return render_template('index.html',
     		loginform = form,
     		registerform = RegisterForm()
@@ -76,11 +77,11 @@ def register():
 	form = RegisterForm()
 	if form.validate():
 		#if user registers with email, create a username, from their email
-		if form.username.data.find('@') != -1:
-			username = form.username.data.split('@')[0]
-			email = form.username.data
+		if form.newusername.data.find('@') != -1:
+			username = form.newusername.data.split('@')[0]
+			email = form.newusername.data
 		else:
-			username = form.username.data
+			username = form.newusername.data
 			email = None
 		#checks if username already exists
 		checkuser = User.query.filter_by(username = username).first()
