@@ -1,7 +1,7 @@
 flitterFlask
 ============
 
-clone of twitter created using flask framework for python 
+clone of twitter created using flask framework for python:
 http://flitterfavmed.herokuapp.com/
 
 ###note on heroku deployment:
